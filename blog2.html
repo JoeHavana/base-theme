@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Blog</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <meta name="author" content="Luis joel Pedroso"/>
+    
+        <!--meta http-equiv="expires" content="86400"--><!-- 56400 => 24 hours -->
+        <meta name="operator" content=" page.webmaster_name ">
+        <meta name="copyright" content="company">
+        <meta name="generator" content="wagtail cms"/>
+        <meta name="description" content="{{ page.search_description }}"/>
+        <meta name="keywords" content="{{ page.meta_keywords }}"/>
+        <meta name="revisit-after" content="{{ page.meta_revisit_after }} Days"/>
+        <meta name="robots" content="index, follow"/>
+  <!-- Favicons -->
+  <link href="./save/favicon.png" rel="icon">
+  <link href="./save/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nivoslider/3.2/nivo-slider.min.css" integrity="sha512-nabQX023kkkPP+H9ptetp5lK0CQ4rv6lG/slhMi5eONKfC1fI4lClHXubH6VP6PgXExycfzlAQHufX1oHMzUew==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.css" integrity="sha512-e+0yqAgUQFoRrJ4pZigQXpOE0S7J9IGwmgH801h4H5ODqOCG8/GRfXHQ+9ab754NL79O7wDwdjwY3CcU8sEANg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="./save/styles.css" rel="stylesheet">
+
+
+<!-- JS CDNs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/shortcuts/infinite-scroll/waypoints-infinite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/1.9.3/venobox.min.js" integrity="sha512-zBTnX97k269iewUwROiWwO82A6uXO4lcjq0Z4xnvO+qAblC/RMQRUu8fQVKtSFhPNKD5Xzh9PMoZG7+LnmH1Hg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.16.6/sweetalert2.min.js" integrity="sha512-CrNI25BFwyQ47q3MiZbfATg0ZoG6zuNh2ANn/WjyqvN4ShWfwPeoCOi9pjmX4DoNioMQ5gPcphKKF+oVz3UjRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js" integrity="sha512-NhRZzPdzMOMf005Xmd4JonwPftz4Pe99mRVcFeRDcdCtfjv46zPIi/7ZKScbpHD/V0HB1Eb+ZWigMqw94VUVaw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nivoslider/3.2/jquery.nivo.slider.min.js" integrity="sha512-rwjQKesPaeXWoFNcTVz8rPBqsU06+JhcsudIQfpUiOhxGHqymn9aSJpG7NPu4MZJ7V32Cq4YjT1qV5vVngYA1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <style type="text/css">
+    
+.nivo-content .nivoSlider {
+  position: relative;}
+
+.nivo-content .nivoSlider img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none; }
+
+.nivo-content .nivoSlider a {
+  border: 0;
+  display: block; }
+
+.nivo-content .nivo-controlNav {
+  text-align: center;
+  padding: 20px 0; }
+
+.nivo-content .nivo-controlNav a {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url(save/nivo/bullets.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  margin: 0 2px; }
+
+.nivo-content .nivo-controlNav a.active {
+  background-position: 0 -22px; }
+
+.nivo-content .nivo-directionNav a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(save/nivo/arrows.png) no-repeat;
+  text-indent: -9999px;
+  border: 0;
+  opacity: 0;
+  transition: all 200ms ease-in-out; }
+
+.nivo-content:hover .nivo-directionNav a {
+  opacity: 1; }
+
+.nivo-prevNav {
+  left: 15px; }
+
+.nivo-nextNav {
+  right: 15px; }
+
+.nivo-content a.nivo-nextNav {
+  background-position: -30px 0; }
+
+.nivo-content .nivo-caption {
+  font-family: Helvetica, Arial, sans-serif; }
+
+.nivo-content .nivo-caption a {
+  color: #fff;
+  border-bottom: 1px dotted #fff; }
+
+.nivo-content .nivo-caption a:hover {
+  color: #fff; }
+
+.nivo-content .nivo-controlNav.nivo-thumbs-enabled {
+  width: 100%; }
+
+.nivo-content .nivo-controlNav.nivo-thumbs-enabled a {
+  width: auto;
+  height: auto;
+  background: none;
+  margin-bottom: 5px; }
+
+.nivo-content .nivo-controlNav.nivo-thumbs-enabled img {
+  display: block;
+  width: 120px;
+  height: auto; }
+
+.nivo-content .nivo-controlNav {
+  position: relative;
+  z-index: 99999;
+  bottom: 40px; }
+
+.nivo-content .nivo-controlNav a {
+  border: 2px solid #fff;
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  margin: 0 5px;
+  text-indent: -9999px;
+  line-height: 8px;
+  background: #3c3c3c;
+  cursor: pointer;
+  position: relative;
+  z-index: 9;
+  border-radius: 100%;
+  opacity: 0;
+  z-index: -999; }
+
+.nivo-content:hover .nivo-controlNav a {
+  opacity: 1;
+  z-index: 999999; }
+
+.nivo-content .nivo-controlNav a:hover, .nivo-content .nivo-controlNav a.active {
+  box-shadow: 0 0 15px 2px lime;
+  background: #000;
+  cursor: pointer; }
+
+ol.carousel-indicators li {
+  background-color: steelblue;
+  opacity: .6;
+  box-shadow: 0 0 20px 2px #fff;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+ol.carousel-indicators li.active {
+  background-color: #000;
+  opacity: .6;
+  box-shadow: 0 0 10px 5px lime;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+@media (max-width: 790px) {
+  #myCarousel {
+    top: 60px;
+  }
+}
+
+
+/* Basket Menu */
+
+.basket-qty{
+    color: #fff;
+    background: #d42114;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 11px;
+    height: 15px;
+    width: 14px;
+    position: absolute;
+    box-sizing: content-box;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1px;
+    right: 10px;
+}
+
+.basket-btn{
+    position: relative;
+}
+
+.basket-btn:hover, .basket-btn:focus, .basket-btn:active, .basket-btn.active{
+    color:#d42114;
+    transition-duration: 0.4s;
+    background-color: #fff;
+}
+
+
+@media (max-width: 765px) {
+  header.header-bg {
+    top: -300px;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}
+  </style>
+    </head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+
+  <!-- ======= Navbar ======= -->
+  <nav id="navbar" class="fixed-top">
+    <div class="container-fluid d-flex">
+
+      <div class="logo mr-auto">
+        <h2 class="text-light shadow h1"><a href="index.html"><span style="color: red;">e</span>Business</a></h2>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#navbar">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li class="drop-down"><a href="#">Drop Down<i class="fas fa-angle-down drop-icon ml-2"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="drop-down"><a href="#">Drop Down 2<i class="fas fa-angle-down drop-icon ml-2"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="hide-on-med-and-down">
+            <a type="button" role="button" rel="nofollow" href="#"
+              class="btn btn-outline-secondary border-0 basket-btn">
+              <div id="basket-qty" class="basket-qty">5</div>
+              <div class="mr-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-cart3"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+              </div>
+            </a>
+          </li>
+          <li>
+            <form class="form-inline">
+              <div class="input-group mb-2">
+                <input type="search" class="form-control nav-search-input pl-2" aria-describedby="btn-nav" placeholder="Search for..." aria-label="Search for...">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-primary btn-search px-2"  id="btn-nav" type="button">
+                    <span class="fas fa-search"></span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </li>
+          <li class="hide-on-med-and-up">
+            <a role="button" rel="nofollow" href="#">
+              <i class="fas fa-cart-plus"></i><span class="btn btn-info p-2 mx-1">2</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </nav><!-- End Header -->
+
+  <nav id="nav2" class="navbar navbar-expand-lg nav2 nav2-marg hide-on-med-and-down">
+      <ul class="navbar-nav mr-auto ul-2 nav-promoted-items owl-carousel">
+        <li class="nav-item mx-2 li-2 item bg-primary">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">ALL</a>
+        </li>
+        <li class="nav-item mx-2 li-2 item">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">Catg-1</a>
+        </li>
+        <li class="nav-item mx-2 li-2 item">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">Catg-2</a>
+        </li>
+        <li class="nav-item mx-2 li-2 item">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">Catg-3</a>
+        </li>
+        <li class="nav-item mx-2 li-2 item">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">Catg-4</a>
+        </li>
+        <li class="nav-item mx-2 li-2 item">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">Catg-5</a>
+        </li>
+        <li class="nav-item mx-2 li-2 item">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">Catg-6</a>
+        </li>
+        <li class="nav-item mx-2 li-2 item">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">Catg-7</a>
+        </li>
+        <li class="nav-item mx-2 li-2 item">
+          <a class="nav-link btn py-1" href="/" tabindex="-1" aria-disabled="true">Catg-8</a>
+        </li>
+      </ul>
+  </nav>
+
+
+
+
+  <main id="main">
+
+    <!-- ======= Blog Header ======= -->
+    <header class="header-bg page-area" style="background: url(./save/slider1.jpg);">
+      <div class="overlayout-l"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="slider-content text-center">
+              <div class="header-bottom">
+                <div class="layer2 wow zoomIn" data-wow-duration="1s" data-wow-delay=".4s">
+                  <h1 class="mb-3 shadow glow">My Blog</h1>
+                </div>
+                <div class="wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s">
+                  <h2>Profesional Blog Page</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header><!-- End Blog Header -->
+
+    <!-- ======= Blog Page ======= -->
+    <div class="blog-page area-padding">
+      <div class="container">
+        <div class="row">
+
+          <!-- Start single blog -->
+          <div class="col-md-8 mt-5 col-sm-8 col-xs-12">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog-details.html">
+                      <img src="./save/blog1.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                      <i class="fa fa-comment-o"></i>
+                      <a href="#">11 comments</a>
+                    </span>
+                    <span class="date-type">
+                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                    </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4>
+                      <a href="#">Post my imagine Items</a>
+                    </h4>
+                    <p>
+                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
+                    </p>
+                  </div>
+                  <span>
+                    <a href="blog-details.html" class="ready-btn">Read more</a>
+                  </span>
+                </div>
+              </div>
+              <!-- End single blog -->
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog-details.html">
+                      <img src="./save/blog2.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                      <i class="fa fa-comment-o"></i>
+                      <a href="#">7 comments</a>
+                    </span>
+                    <span class="date-type">
+                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                    </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4>
+                      <a href="#">Post my imagine Items</a>
+                    </h4>
+                    <p>
+                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
+                    </p>
+                  </div>
+                  <span>
+                    <a href="blog-details.html" class="ready-btn">Read more</a>
+                  </span>
+                </div>
+              </div>
+              <!-- Start single blog -->
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog-details.html">
+                      <img src="./save/blog3.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                      <i class="fa fa-comment-o"></i>
+                      <a href="#">13 comments</a>
+                    </span>
+                    <span class="date-type">
+                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                    </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4>
+                      <a href="#">Post my imagine Items</a>
+                    </h4>
+                    <p>
+                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
+                    </p>
+                  </div>
+                  <span>
+                    <a href="blog-details.html" class="ready-btn">Read more</a>
+                  </span>
+                </div>
+              </div>
+              <!-- End single blog -->
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog-details.html">
+                      <img src="./save/blog4.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                      <i class="fa fa-comment-o"></i>
+                      <a href="#">1 comments</a>
+                    </span>
+                    <span class="date-type">
+                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                    </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4>
+                      <a href="#">Post my imagine Items</a>
+                    </h4>
+                    <p>
+                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
+                    </p>
+                  </div>
+                  <span>
+                    <a href="blog-details.html" class="ready-btn">Read more</a>
+                  </span>
+                </div>
+              </div>
+              <!-- Start single blog -->
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="single-blog">
+                  <div class="single-blog-img">
+                    <a href="blog-details.html">
+                      <img src="./save/blog5.jpg" alt="">
+                    </a>
+                  </div>
+                  <div class="blog-meta">
+                    <span class="comments-type">
+                      <i class="fa fa-comment-o"></i>
+                      <a href="#">10 comments</a>
+                    </span>
+                    <span class="date-type">
+                      <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                    </span>
+                  </div>
+                  <div class="blog-text">
+                    <h4>
+                      <a href="#">Post my imagine Items</a>
+                    </h4>
+                    <p>
+                      Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit.
+                    </p>
+                  </div>
+                  <span>
+                    <a href="blog-details.html" class="ready-btn">Read more</a>
+                  </span>
+                </div>
+              </div>
+              <!-- End single blog -->
+              <div class="blog-pagination">
+                <ul class="pagination">
+                  <li><a href="#">&lt;</a></li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">&gt;</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+          <aside class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mt-5">
+            <div class="page-head-blog">
+              <div class="aside-blog-box">
+                <!-- search option start -->
+                <form>
+                  <div class="input-group mb-2">
+                    <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-outline-secondary btn-search" type="button">
+                        <span class="fas fa-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                </form>
+                <!-- search option end -->
+              </div>
+              <div class="aside-blog-box">
+                <!-- recent start -->
+                <div class="aside-blog">
+                  <h4>recent post</h4>
+                  <div class="recent-post">
+                    <!-- start single post -->
+                    <div class="recent-single-post">
+                      <div class="post-img">
+                        <a href="#">
+                          <img src="./save/blog1.jpg" alt="">
+                        </a>
+                      </div>
+                      <div class="resent-post">
+                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
+                      </div>
+                    </div>
+                    <!-- End single post -->
+
+                    <!-- start single post -->
+                    <div class="recent-single-post">
+                      <div class="post-img">
+                        <a href="#">
+                          <img src="./save/blog2.jpg" alt="">
+                        </a>
+                      </div>
+                      <div class="resent-post">
+                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
+                      </div>
+                    </div>
+                    <!-- End single post -->
+                    <!-- start single post -->
+                    <div class="recent-single-post">
+                      <div class="post-img">
+                        <a href="#">
+                          <img src="./save/blog3.jpg" alt="">
+                        </a>
+                      </div>
+                      <div class="resent-post">
+                        <p><a href="#"> Redug Lerse dolor sit amet consect adipis elit.</a></p>
+                      </div>
+                    </div>
+                    <!-- End single post -->
+                    <!-- start single post -->
+                    <div class="recent-single-post">
+                      <div class="post-img">
+                        <a href="#">
+                          <img src="./save/blog4.jpg" alt="">
+                        </a>
+                      </div>
+                      <div class="resent-post">
+                        <p><a href="#">Redug Lerse dolor sit amet consect adipis elit.</a></p>
+                      </div>
+                    </div>
+                    <!-- End single post -->
+                  </div>
+                </div>
+                <!-- recent end -->
+              </div>
+
+
+              <div class="aside-blog-box">
+                <div class="aside-blog">
+                  <h4>categories</h4>
+                  <ul>
+                    <li>
+                      <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                      <a href="#">Project</a>
+                    </li>
+                    <li>
+                      <a href="#">Design</a>
+                    </li>
+                    <li>
+                      <a href="#">wordpress</a>
+                    </li>
+                    <li>
+                      <a href="#">Joomla</a>
+                    </li>
+                    <li>
+                      <a href="#">Html</a>
+                    </li>
+                    <li>
+                      <a href="#">Website</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+
+
+              <div class="aside-blog-box">
+                <div class="aside-blog">
+                  <h4>Your ads here</h4>
+                  <div class="jumbotron border">
+                    <h2 class="text-center text-muted">Ads</h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="aside-blog-box">
+                <div class="aside-blog">
+                  <h4>archive</h4>
+                  <ul>
+                    <li>
+                      <a href="#">07 July 2016</a>
+                    </li>
+                    <li>
+                      <a href="#">29 June 2016</a>
+                    </li>
+                    <li>
+                      <a href="#">13 May 2016</a>
+                    </li>
+                    <li>
+                      <a href="#">20 March 2016</a>
+                    </li>
+                    <li>
+                      <a href="#">09 Fabruary 2016</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="aside-blog-box">
+                <div class="left-tags blog-tags">
+                  <div class="popular-tag left-side-tags aside-blog">
+                    <h4>popular tags</h4>
+                    <ul>
+                      <li>
+                        <a href="#">Portfolio</a>
+                      </li>
+                      <li>
+                        <a href="#">Project</a>
+                      </li>
+                      <li>
+                        <a href="#">Design</a>
+                      </li>
+                      <li>
+                        <a href="#">Website</a>
+                      </li>
+                      <li>
+                        <a href="#">Joomla</a>
+                      </li>
+                      <li>
+                        <a href="#">Html</a>
+                      </li>
+                      <li>
+                        <a href="#">wordpress</a>
+                      </li>
+                      <li>
+                        <a href="#">Masonry</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <!-- End left sidebar -->
+
+        </div>
+      </div>
+    </div><!-- End Blog Page -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer><hr>
+    <div class="footer-area mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="footer-content">
+              <div class="footer-head">
+                <div class="">
+                  <h2 class="display-1"><span class="text-primary">e</span>Business</h2>
+                </div>
+
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                <div class="footer-icons">
+                  <ul>
+                    <li>
+                      <a href="#"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-google"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end single footer -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="footer-content">
+              <div class="footer-head">
+                <h4>information</h4>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                </p>
+                <div class="footer-contacts">
+                  <p><span>Tel:</span> +123 456 789</p>
+                  <p><span>Email:</span> contact@example.com</p>
+                  <p><span>Working Hours:</span> 9am-5pm</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end single footer -->
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="footer-content">
+              <div class="footer-head">
+                <h4>Instagram</h4>
+                <div class="flicker-img">
+                  <a href="#" class="hide-over"><img class="scale" src="./save/et1.jpg" alt=""></a>
+                  <a href="#" class="hide-over"><img class="scale" src="./save/et2.jpg" alt=""></a>
+                  <a href="#" class="hide-over"><img class="scale" src="./save/et3.jpg" alt=""></a>
+                  <a href="#" class="hide-over"><img class="scale" src="./save/et4.jpg" alt=""></a>
+                  <a href="#" class="hide-over"><img class="scale" src="./save/et5.jpg" alt=""></a>
+                  <a href="#" class="hide-over"><img class="scale" src="./save/et6.jpg" alt=""></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-area-bottom  mb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+              <p>
+                  Copyright &copy;&nbsp;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website have been created with&nbsp;<i class="fas fa-heart" aria-hidden="true"></i>&nbsp;by&nbsp;<a href="https://www.github.com/" target="_blank" rel="nofollow">me</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!--div id="preloader"></div-->
+
+
+  <script src="./save/particles/particles.min.js" type="text/javascript"></script>
+  <script src="./save/particles/particle.js" type="text/javascript"></script>
+  <script src="save/appear/jquery.appear.js"></script>
+
+  <script src="save/parallax/parallax.js"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="./save/custom.js"></script>
+
+      <script type="text/javascript">
+        $(()=>{
+ 
+
+              // Hero typed
+                if ($('.typed').length) {
+                  var typed_strings = $(".typed").data('typed-items');
+                  typed_strings = typed_strings.split(',')
+                  new Typed('.typed', {
+                    strings: typed_strings,
+                    loop: true,
+                    typeSpeed: 50,
+                    backSpeed: 10,
+                    backDelay: 2000
+                  });
+                }
+            /*--------------------------
+              Back to top button
+            ----------------------------*/
+            $(window).scroll(function() {
+              if ($(this).scrollTop() > 100) {
+                $('.back-to-top').fadeIn('slow');
+              } else {
+                $('.back-to-top').fadeOut('slow');
+              }
+            });
+
+            $('.back-to-top').click(function(){
+              $('html, body').animate({scrollTop : 0},500);
+              return false;
+            });
+
+          var carouselNav = function() {
+            $('.nav-promoted-items').owlCarousel({
+              center: true,
+              loop: true,
+              items:10,
+              margin: 0,
+              stagePadding: 0,
+              nav: true,
+              //navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
+              responsive:{
+                0:{
+                  items: 3
+                },
+                600:{
+                  items: 5
+                },
+                992:{
+                  items: 9
+                }
+              }
+            });
+          };
+          carouselNav();
+          var carousel3 = function() {
+            $('.inline-items').owlCarousel({
+              center: true,
+              loop: true,
+              items:1,
+              margin: 10,
+              stagePadding: 0,
+              nav: true,
+              navText: ['<i class="fas fa-angle-left text-white"></i>', '<i class="fas fa-angle-right text-white"></i>'],
+              responsive:{
+                0:{
+                  items: 1
+                },
+                600:{
+                  items: 2
+                },
+                1000:{
+                  items: 3
+                }
+              }
+            });
+          };
+          carousel3();
+        })
+      </script>
+    </body>
+</html>
